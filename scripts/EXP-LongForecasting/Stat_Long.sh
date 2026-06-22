@@ -14,7 +14,7 @@ for model_name in Naive
   do
   for pred_len in 96 192 336 720
     do
-      python -u run_stat.py \
+      uv run python -u run_stat.py \
         --is_training 1 \
         --root_path ./dataset/ \
         --data_path ETTh1.csv \
@@ -27,7 +27,7 @@ for model_name in Naive
         --des 'Exp' \
         --itr 1 >logs/LongForecasting/$model_name'_ETTh1_'$pred_len.log
 
-      python -u run_stat.py \
+      uv run python -u run_stat.py \
         --is_training 1 \
         --root_path ./dataset/ \
         --data_path ETTh2.csv \
@@ -40,7 +40,7 @@ for model_name in Naive
         --des 'Exp' \
         --itr 1 >logs/LongForecasting/$model_name'_ETTh2_'$pred_len.log
 
-      python -u run_stat.py \
+      uv run python -u run_stat.py \
         --is_training 1 \
         --root_path ./dataset/ \
         --data_path ETTm1.csv \
@@ -53,7 +53,7 @@ for model_name in Naive
         --des 'Exp' \
         --itr 1 >logs/LongForecasting/$model_name'_ETTm1_'$pred_len.log
 
-      python -u run_stat.py \
+      uv run python -u run_stat.py \
         --is_training 1 \
         --root_path ./dataset/ \
         --data_path ETTm2.csv \
@@ -66,7 +66,7 @@ for model_name in Naive
         --des 'Exp' \
         --itr 1 --batch_size 300 >logs/LongForecasting/$model_name'_ETTm2_'$pred_len.log
 
-    python -u run_stat.py \
+    uv run python -u run_stat.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path exchange_rate.csv \
@@ -79,7 +79,7 @@ for model_name in Naive
       --des 'Exp' \
       --itr 1 >logs/LongForecasting/$model_name'_exchange_rate_'$pred_len.log
       
-    python -u run_stat.py \
+    uv run python -u run_stat.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path weather.csv \
@@ -92,7 +92,7 @@ for model_name in Naive
       --des 'Exp' \
       --itr 1 >logs/LongForecasting/$model_name'_weather_'$pred_len.log
 
-    python -u run_stat.py \
+    uv run python -u run_stat.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path electricity.csv \
@@ -105,7 +105,7 @@ for model_name in Naive
       --des 'Exp' \
       --itr 1 >logs/LongForecasting/$model_name'_electricity_'$pred_len.log
 
-    python -u run_stat.py \
+    uv run python -u run_stat.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path traffic.csv \
@@ -125,7 +125,7 @@ done
 for model_name in Naive
   for pred_len in 24 36 48 60
     do
-      python -u run_stat.py \
+      uv run python -u run_stat.py \
           --is_training 1 \
           --root_path ./dataset/ \
           --data_path national_illness.csv \

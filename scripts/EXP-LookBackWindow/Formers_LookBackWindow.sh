@@ -12,7 +12,7 @@ for pred_len in 24 720
 do
 for seq_len in 48 72 96 120 144 168 192 336 504 672 720
 do
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
     --is_training 1 \
     --root_path ./dataset/ \
     --data_path exchange_rate.csv \
@@ -33,7 +33,7 @@ do
     --itr 1 \
     --train_epochs 1 >logs/LookBackWindow/$model_name'_exchange_rate'_$seq_len'_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path electricity.csv \
@@ -53,7 +53,7 @@ do
       --des 'Exp' \
       --itr 1 >logs/LookBackWindow/$model_name'_electricity'_$seq_len'_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
     --is_training 1 \
     --root_path ./dataset/ \
     --data_path traffic.csv \
@@ -74,7 +74,7 @@ do
     --itr 1 \
     --train_epochs 3 >logs/LookBackWindow/$model_name'_traffic'_$seq_len'_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
     --is_training 1 \
     --root_path ./dataset/ \
     --data_path weather.csv \
@@ -95,7 +95,7 @@ do
     --itr 1 \
     --train_epochs 2 >logs/LookBackWindow/$model_name'_weather'_$seq_len'_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path ETTh1.csv \
@@ -115,7 +115,7 @@ do
       --des 'Exp' \
       --itr 1  >logs/LookBackWindow/$model_name'_Etth1'_$seq_len'_'$pred_len.log
   
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path ETTh2.csv \
@@ -146,7 +146,7 @@ for pred_len in 24 720
 do
 for seq_len in 36 48 60 72 144 288
 do
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path ETTm1.csv \
@@ -166,7 +166,7 @@ do
       --des 'Exp' \
       --itr 1  >logs/LookBackWindow/$model_name'_Ettm1'_$seq_len'_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path ETTm2.csv \
@@ -195,7 +195,7 @@ for pred_len in 24 60
 do
 for seq_len in 26 52 78 104 130 156 208
 do
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
     --is_training 1 \
     --root_path ./dataset/ \
     --data_path national_illness.csv \

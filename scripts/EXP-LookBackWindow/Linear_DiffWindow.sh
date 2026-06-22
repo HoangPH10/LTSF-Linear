@@ -4,7 +4,7 @@ for pred_len in 24 720
 do
 for seq_len in 48 72 96 120 144 168 192 336 504 672 720
 do
-   python -u run_longExp.py \
+   uv run python -u run_longExp.py \
     --is_training 1 \
     --root_path ./dataset/ \
     --data_path electricity.csv \
@@ -18,7 +18,7 @@ do
     --des 'Exp' \
     --itr 1 --batch_size 16  --learning_rate 0.001 >logs/LookBackWindow/$model_name'_'electricity_$seq_len'_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
     --is_training 1 \
     --root_path ./dataset/ \
     --data_path ETTh1.csv \
@@ -32,7 +32,7 @@ do
     --des 'Exp' \
     --itr 1 --batch_size 8 >logs/LookBackWindow/$model_name'_'ETTh1_$seq_len'_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
   --is_training 1 \
   --root_path ./dataset/ \
   --data_path Etth2.csv \
@@ -48,7 +48,7 @@ do
   --des 'Exp' \
   --itr 1 --batch_size 32 --learning_rate 0.05 >logs/LookBackWindow/$model_name'_'Etth2_$seq_len'_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
   --is_training 1 \
   --root_path ./dataset/ \
   --data_path exchange_rate.csv \
@@ -62,7 +62,7 @@ do
   --des 'Exp' \
   --itr 1 --batch_size 32 --learning_rate 0.005 >logs/LookBackWindow/$model_name'_'exchange_rate_$seq_len'_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
   --is_training 1 \
   --root_path ./dataset/ \
   --data_path traffic.csv \
@@ -76,7 +76,7 @@ do
   --des 'Exp' \
   --itr 1 --batch_size 16 --learning_rate 0.05 >logs/LookBackWindow/$model_name'_'traffic_$seq_len'_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
   --is_training 1 \
   --root_path ./dataset/ \
   --data_path weather.csv \
@@ -96,7 +96,7 @@ for pred_len in 24 720
 do
 for seq_len in 36 48 60 72 144 288
 do
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
   --is_training 1 \
   --root_path ./dataset/ \
   --data_path Ettm1.csv \
@@ -110,7 +110,7 @@ do
   --des 'Exp' \
   --itr 1 --batch_size 8 --learning_rate 0.0001 >logs/LookBackWindow/$model_name'_'Ettm1_$seq_len'_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
   --is_training 1 \
   --root_path ./dataset/ \
   --data_path Ettm2.csv \
@@ -130,7 +130,7 @@ for pred_len in 24 60
 do
 for seq_len in 26 52 78 104 130 156 208
 do
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
   --is_training 1 \
   --root_path ./dataset/ \
   --data_path national_illness.csv \

@@ -18,7 +18,7 @@ for model_name in Autoformer Informer Transformer
 do 
 for pred_len in 96 192 336 720
 do
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
     --is_training 1 \
     --root_path ./dataset/ \
     --data_path exchange_rate.csv \
@@ -39,7 +39,7 @@ do
     --itr 1 \
     --train_epochs 1 --embed_type $embed_type >logs/Embedding/$embed_type'_'$model_name'_exchange_rate_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path electricity.csv \
@@ -59,7 +59,7 @@ do
       --des 'Exp' \
       --itr 1 --embed_type $embed_type >logs/Embedding/$embed_type'_'$model_name'_electricity_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
     --is_training 1 \
     --root_path ./dataset/ \
     --data_path traffic.csv \
@@ -80,7 +80,7 @@ do
     --itr 1 \
     --train_epochs 3 --embed_type $embed_type >logs/Embedding/$embed_type'_'$model_name'_traffic_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
     --is_training 1 \
     --root_path ./dataset/ \
     --data_path weather.csv \
@@ -101,7 +101,7 @@ do
     --itr 1 \
     --train_epochs 2 --embed_type $embed_type >logs/Embedding/$embed_type'_'$model_name'_weather_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path ETTh1.csv \
@@ -121,7 +121,7 @@ do
       --des 'Exp' \
       --itr 1  --embed_type $embed_type >logs/Embedding/$embed_type'_'$model_name'_Etth1_'$pred_len.log
   
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path ETTh2.csv \
@@ -141,7 +141,7 @@ do
       --des 'Exp' \
       --itr 1  --embed_type $embed_type >logs/Embedding/$embed_type'_'$model_name'_Etth2_'$pred_len.log
   
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path ETTm1.csv \
@@ -161,7 +161,7 @@ do
       --des 'Exp' \
       --itr 1  --embed_type $embed_type >logs/Embedding/$embed_type'_'$model_name'_Ettm1_'$pred_len.log
 
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path ETTm2.csv \
@@ -190,7 +190,7 @@ for model_name in Autoformer Informer Transformer
 do 
 for pred_len in 24 36 48 60
 do
-  python -u run_longExp.py \
+  uv run python -u run_longExp.py \
     --is_training 1 \
     --root_path ./dataset/ \
     --data_path national_illness.csv \
