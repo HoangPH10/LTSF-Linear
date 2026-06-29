@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 
+
 class moving_avg(nn.Module):
     """
     Moving average block to highlight the trend of time series
