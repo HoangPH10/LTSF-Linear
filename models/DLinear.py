@@ -45,8 +45,8 @@ class Model(nn.Module):
         self.seq_len = configs.seq_len
         self.pred_len = configs.pred_len
 
-        # Decompsition Kernel Size
-        kernel_size = 25
+        # Decomposition Kernel Size (respects --moving_avg)
+        kernel_size = getattr(configs, 'moving_avg', 25)
         self.decompsition = series_decomp(kernel_size)
         self.individual = configs.individual
         self.channels = configs.enc_in

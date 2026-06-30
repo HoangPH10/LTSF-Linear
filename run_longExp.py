@@ -53,6 +53,8 @@ parser.add_argument('--e_layers', type=int, default=2, help='num of encoder laye
 parser.add_argument('--d_layers', type=int, default=1, help='num of decoder layers')
 parser.add_argument('--d_ff', type=int, default=2048, help='dimension of fcn')
 parser.add_argument('--moving_avg', type=int, default=25, help='window size of moving average')
+parser.add_argument('--decomp_kernels', type=int, nargs='+', default=None,
+                    help='MDLinear: list of moving-average kernel sizes for the multi-scale trend mixture (e.g. --decomp_kernels 9 25 49)')
 parser.add_argument('--factor', type=int, default=1, help='attn factor')
 parser.add_argument('--distil', action='store_false',
                     help='whether to use distilling in encoder, using this argument means not using distilling',
