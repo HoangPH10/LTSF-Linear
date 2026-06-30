@@ -22,7 +22,6 @@ uv run python -u run_longExp.py \
   --pred_len $pred_len \
   --enc_in 21 \
   --decomp_kernels 9 25 49 \
-  --use_revin \
   --revin_mode std \
   --des 'Exp' \
   --itr 1 --batch_size 16 >logs/LongForecasting/$model_name'_'Weather_$seq_len'_'$pred_len.log

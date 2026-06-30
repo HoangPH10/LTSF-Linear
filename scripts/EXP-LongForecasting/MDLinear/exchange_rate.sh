@@ -22,7 +22,6 @@ uv run python -u run_longExp.py \
   --pred_len $pred_len \
   --enc_in 8 \
   --decomp_kernels 9 25 49 \
-  --use_revin \
   --revin_mode std \
   --des 'Exp' \
   --itr 1 --batch_size 8 --learning_rate 0.0005 >logs/LongForecasting/$model_name'_'Exchange_$seq_len'_'$pred_len.log
@@ -42,7 +41,6 @@ uv run python -u run_longExp.py \
   --pred_len $pred_len \
   --enc_in 8 \
   --decomp_kernels 9 25 49 \
-  --use_revin \
   --revin_mode std \
   --des 'Exp' \
   --itr 1 --batch_size 32 --learning_rate 0.0005 >logs/LongForecasting/$model_name'_'Exchange_$seq_len'_'$pred_len.log

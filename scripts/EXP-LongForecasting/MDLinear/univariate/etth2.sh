@@ -26,7 +26,6 @@ uv run python -u run_longExp.py \
   --pred_len $pred_len \
   --enc_in 1 \
   --decomp_kernels 9 25 49 \
-  --use_revin \
   --revin_mode std \
   --des 'Exp' \
   --itr 1 --batch_size 32 --learning_rate 0.005 --feature S >logs/LongForecasting/$model_name'_'fS_ETTh2_$seq_len'_'$pred_len.log
