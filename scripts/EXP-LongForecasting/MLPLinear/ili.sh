@@ -23,8 +23,8 @@ uv run python -u run_longExp.py \
   --pred_len $pred_len \
   --enc_in 7 \
   --revin_mode std \
-  --mlp_hidden 128 \
-  --mlp_dropout 0.3 \
+  --mlp_hidden 64 \
+  --mlp_dropout 0.2 \
   --mlp_branches seasonal \
   --des 'Exp' \
   --itr 1 --batch_size 32 --learning_rate 0.01 >logs/LongForecasting/$model_name'_'ili_$seq_len'_'$pred_len.log

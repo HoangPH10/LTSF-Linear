@@ -22,8 +22,8 @@ uv run python -u run_longExp.py \
   --pred_len $pred_len \
   --enc_in 21 \
   --revin_mode std \
-  --mlp_hidden 512 \
-  --mlp_dropout 0.1 \
+  --mlp_hidden 64 \
+  --mlp_dropout 0.2 \
   --mlp_branches seasonal \
   --des 'Exp' \
   --itr 1 --batch_size 16 >logs/LongForecasting/$model_name'_'Weather_$seq_len'_'$pred_len.log

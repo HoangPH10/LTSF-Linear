@@ -26,8 +26,8 @@ uv run python -u run_longExp.py \
   --pred_len $pred_len \
   --enc_in 1 \
   --revin_mode std \
-  --mlp_hidden 256 \
-  --mlp_dropout 0.1 \
+  --mlp_hidden 64 \
+  --mlp_dropout 0.2 \
   --mlp_branches seasonal \
   --des 'Exp' \
   --itr 1 --batch_size 8 --learning_rate 0.0001 --feature S >logs/LongForecasting/$model_name'_'fS_ETTm1_$seq_len'_'$pred_len.log
