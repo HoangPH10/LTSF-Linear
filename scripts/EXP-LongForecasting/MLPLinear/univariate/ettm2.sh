@@ -26,7 +26,7 @@ uv run python -u run_longExp.py \
   --pred_len $pred_len \
   --enc_in 1 \
   --revin_mode std \
-  --mlp_hidden 8 \
+  --mlp_hidden 64 \
   --mlp_dropout 0.2 \
   --mlp_branches both \
   --des 'Exp' \
@@ -46,7 +46,7 @@ uv run python -u run_longExp.py \
   --pred_len $pred_len \
   --enc_in 1 \
   --revin_mode std \
-  --mlp_hidden 8 \
+  --mlp_hidden 64 \
   --mlp_dropout 0.2 \
   --mlp_branches both \
   --des 'Exp' \
