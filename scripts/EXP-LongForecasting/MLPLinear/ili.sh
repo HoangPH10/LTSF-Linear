@@ -23,7 +23,7 @@ uv run python -u run_longExp.py \
   --pred_len $pred_len \
   --enc_in 7 \
   --revin_mode std \
-  --mlp_hidden 16 \
+  --mlp_hidden 8 \
   --mlp_dropout 0.2 \
   --mlp_branches seasonal \
   --des 'Exp' \
