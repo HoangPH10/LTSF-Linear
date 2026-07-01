@@ -24,7 +24,7 @@ uv run python -u run_longExp.py \
   --revin_mode std \
   --mlp_hidden 8 \
   --mlp_dropout 0.2 \
-  --mlp_branches seasonal \
+  --mlp_branches both \
   --des 'Exp' \
   --itr 1 --batch_size 8 --learning_rate 0.0005 >logs/LongForecasting/$model_name'_'Exchange_$seq_len'_'$pred_len.log
 done
@@ -45,7 +45,7 @@ uv run python -u run_longExp.py \
   --revin_mode std \
   --mlp_hidden 8 \
   --mlp_dropout 0.2 \
-  --mlp_branches seasonal \
+  --mlp_branches both \
   --des 'Exp' \
   --itr 1 --batch_size 32 --learning_rate 0.0005 >logs/LongForecasting/$model_name'_'Exchange_$seq_len'_'$pred_len.log
 done

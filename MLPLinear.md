@@ -95,7 +95,7 @@ picks up `MLPLinear` automatically because the name contains `"Linear"`.
 | Situation                                                                     | Use            |
 | ----------------------------------------------------------------------------- | -------------- |
 | First run on any dataset / need a stable, low-variance baseline               | **RDLinear**   |
-| Series shows regime shifts, change points, or non-linear seasonality (ETT, Weather, Exchange at long horizon) | **MLPLinear** with `--mlp_branches seasonal` |
+| Series shows regime shifts, change points, or non-linear seasonality (ETT, Weather, Exchange at long horizon) | **MLPLinear** with `--mlp_branches both` |
 | Channel-rich, strongly periodic (Electricity, Traffic)                         | Try MLPLinear with small `--mlp_hidden` (128–256); expect marginal gains |
 | Small-sample / short series (ILI)                                              | Prefer RDLinear; if using MLPLinear, drop `--mlp_hidden` to 64–128 and raise `--mlp_dropout` to 0.2–0.3 |
 
