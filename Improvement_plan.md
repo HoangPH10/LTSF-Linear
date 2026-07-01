@@ -56,20 +56,6 @@ cost/complexity → where to implement → risk*.
 - **Risk:** Low. Std normalization can mildly hurt already-stationary, strongly-seasonal series
   (Traffic/Electricity); keep a flag to fall back to mean-only (NLinear-style) subtraction.
 
-### B. Better / unfrozen decomposition
-- **Idea (B1):** Respect the existing `--moving_avg` argument ([run_longExp.py:51](run_longExp.py#L51))
-  instead of the hardcoded `kernel_size = 25` at [models/DLinear.py:48](models/DLinear.py#L48), and
-  tune it per dataset.
-- **Idea (B2):** Multi-scale "mixture of kernels" — extract trend with several moving-average
-  kernels of different sizes and learn a weighted combination (the FEDformer trend mixture),
-  capturing both slow and fast trends.
-- **Why it helps:** Trend quality directly limits the trend-branch linear layer; a single fixed
-  kernel is rarely optimal across datasets/horizons.
-- **Cost:** B1 trivial; B2 low–moderate.
-- **Implement:** Edit `series_decomp` / `moving_avg` in [models/DLinear.py](models/DLinear.py#L48);
-  for B2 add a `series_decomp_multi` block.
-- **Risk:** Low. Mostly a hyperparameter/inductive-bias change.
-
 ### C. Mild non-linearity / added capacity
 - **Idea:** Replace each component's single linear layer with a small 2-layer MLP (with
   GELU/ReLU + dropout) or add a residual term, optionally only on the seasonal branch.
@@ -106,9 +92,8 @@ cost/complexity → where to implement → risk*.
 ## 3. Recommended Experimentation Order
 
 1. **A (RevIN)** — best accuracy-per-effort; low risk.
-2. **B (decomposition)** — cheap inductive-bias gains; stack on top of A.
-3. **C / D** — higher-effort follow-ups; C for capacity-limited datasets, D for channel-rich ones.
-4. **E (loss/training)** — stackable throughout; fold into every run.
+2. **C / D** — higher-effort follow-ups; C for capacity-limited datasets, D for channel-rich ones.
+3. **E (loss/training)** — stackable throughout; fold into every run.
 
 Each step should be measured against the **vanilla DLinear baseline at the same look-back** so
 gains are attributable.
