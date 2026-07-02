@@ -42,6 +42,8 @@ parser.add_argument('--individual', action='store_true', default=True, help='DLi
 parser.add_argument('--revin_mode', type=str, default='std', help='RDLinear instance norm mode, options:[std, mean]')
 parser.add_argument('--revin_affine', action='store_true', default=True, help='RDLinear: use a learnable affine transform in normalized space')
 parser.add_argument('--revin_eps', type=float, default=1e-5, help='RDLinear: numerical stability epsilon for instance norm')
+# FRDLinear (Frequency-domain RDLinear -- Plan G)
+parser.add_argument('--freq_k', type=int, default=32, help='FRDLinear: number of low-frequency bins to keep for the seasonal branch')
 # Formers 
 parser.add_argument('--embed_type', type=int, default=0, help='0: default 1: value embedding + temporal embedding + positional embedding 2: value embedding + temporal embedding 3: value embedding + positional embedding 4: value embedding')
 parser.add_argument('--enc_in', type=int, default=7, help='encoder input size') # DLinear with --individual, use this hyperparameter as the number of channels
