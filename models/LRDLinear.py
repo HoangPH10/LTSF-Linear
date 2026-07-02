@@ -53,7 +53,7 @@ class LowRankLinear(nn.Module):
         self.up = nn.Linear(rank, out_features, bias=True)
 
     def forward(self, x):
-        return x + self.up(self.act(self.down(x)))
+        return self.up(self.act(self.down(x)))
 
 
 class Model(nn.Module):
