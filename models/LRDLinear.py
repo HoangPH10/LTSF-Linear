@@ -51,9 +51,10 @@ class LowRankLinear(nn.Module):
         self.down = nn.Linear(in_features, rank, bias=False)
         self.act = nn.GELU()
         self.up = nn.Linear(rank, out_features, bias=True)
+        self.skip = nn.Linear(in_features, out_features)
 
     def forward(self, x):
-        return self.up(self.act(self.down(x)))
+        return self.skip(x) + self.up(self.act(self.down(x)))
 
 
 class Model(nn.Module):
