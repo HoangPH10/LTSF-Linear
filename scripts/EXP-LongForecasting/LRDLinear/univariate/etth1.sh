@@ -1,0 +1,32 @@
+if [ ! -d "./logs" ]; then
+    mkdir ./logs
+fi
+
+if [ ! -d "./logs/LongForecasting" ]; then
+    mkdir ./logs/LongForecasting
+fi
+
+if [ ! -d "./logs/LongForecasting/univariate" ]; then
+    mkdir ./logs/LongForecasting/univariate
+fi
+seq_len=336
+model_name=LRDLinear
+
+# ETTh1, univariate results, pred_len= 24 48 96 192 336 720
+for pred_len in 24 48 96 192 336 720
+do
+uv run python -u run_longExp.py \
+  --is_training 1 \
+  --root_path ./dataset/ \
+  --data_path ETTh1.csv \
+  --model_id ETTh1_$seq_len'_'$pred_len \
+  --model $model_name \
+  --data ETTh1 \
+  --seq_len $seq_len \
+  --pred_len $pred_len \
+  --enc_in 1 \
+  --revin_mode std \
+  --lr_rank 32 \
+  --des 'Exp' \
+  --itr 1 --batch_size 32 --feature S --learning_rate 0.005 >logs/LongForecasting/$model_name'_'fS_ETTh1_$seq_len'_'$pred_len.log
+done
