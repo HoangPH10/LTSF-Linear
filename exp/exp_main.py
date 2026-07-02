@@ -1,6 +1,6 @@
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
-from models import Informer, Autoformer, Transformer, DLinear, Linear, NLinear, RDLinear
+from models import Informer, Autoformer, Transformer, DLinear, Linear, NLinear, RDLinear, HRDLinear
 from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop
 from utils.metrics import metric
 
@@ -30,6 +30,7 @@ class Exp_Main(Exp_Basic):
             'Informer': Informer,
             'DLinear': DLinear,
             'RDLinear': RDLinear,
+            'HRDLinear': HRDLinear,
             'NLinear': NLinear,
             'Linear': Linear,
         }
